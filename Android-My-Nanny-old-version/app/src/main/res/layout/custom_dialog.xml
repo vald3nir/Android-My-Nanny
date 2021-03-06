@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue_light"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="@string/ip_streaming"
+        android:textColor="@color/white"
+        android:textSize="22sp" />
+
+    <EditText
+        android:id="@+id/edt_ip_streaming"
+        style="@style/input_field_default"
+        android:hint="@string/url_streaming"
+        android:text="@string/url_streaming" />
+
+    <Button
+        android:id="@+id/btn_save"
+        style="@style/confirm_button"
+        android:text="@string/save" />
+
+</LinearLayout>
