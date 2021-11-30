@@ -7,4 +7,8 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Android-My-Nanny"
+
 include ':app'
+include ':features:login'
+include ':features:dashboard'
+include ':utils'
