@@ -37,7 +37,10 @@ Mobile app of an electronic nanny
 
     sudo service motion restart
     sudo motion
+    
+### To show
 
+    http://192.168.0.40:8081/
 
        
       
