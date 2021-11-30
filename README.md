@@ -1,9 +1,10 @@
-# My-Nanny
+# App My Nanny
 Mobile app of an electronic nanny
 
 
 ## Overview
 
+![overview](https://user-images.githubusercontent.com/23506996/144062063-baf98cac-7531-4581-9139-09d6e38f129f.png)
 
 
 ## Video server configuration on Raspberry Pi [Linux]
