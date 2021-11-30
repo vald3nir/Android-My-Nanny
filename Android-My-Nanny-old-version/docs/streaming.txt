@@ -1,8 +1,0 @@
-cvlc v4l2:///dev/video0 --sout '#transcode{vcodec=mjpg}:std{access=http,mux=mpjpeg,dst=192.168.43.206:8000/webcam.mp4}'
-
-cvlc v4l2:///dev/video0 --sout '#transcode{vcodec=mjpg}:std{access=http,mux=mpjpeg,dst=172.70.10.122:8000/webcam.mp4}'
-
-email: breno.silva.2903@gmail.com
-Senha: Xlr8@xlr8@
-
-link node-red: https://mynanny.mybluemix.net/red/
