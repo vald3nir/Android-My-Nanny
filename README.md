@@ -6,7 +6,7 @@ Mobile app of an electronic nanny
 
 
 
-## Video server configuration
+## Video server configuration on Raspberry Pi [Linux]
 
 ### Install Motion 
 
