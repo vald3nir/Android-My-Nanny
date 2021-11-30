@@ -1,6 +1,7 @@
 # App My Nanny
-Mobile app of an electronic nanny
+A mobile app of an electronic babysitter for the IoT Discipline.
 
+Master in Computer Science - UFC
 
 ## Overview
 
