@@ -1,8 +1,10 @@
 from flask import Blueprint, request
 
-from src.apis.blueprints.auth.use_cases import login, update_user_password
+from src.blueprints.auth._use_cases import AuthUseCase
 
 auth_blueprint = Blueprint('auth_blueprint', __name__)
+
+use_case = AuthUseCase()
 
 
 @auth_blueprint.route('/login', methods=['POST'])
@@ -11,10 +13,11 @@ def route_login():
     body:
     {
         "password": "12345678",
-        "email": "vald3nir@gmail.com"
+        "email": "severino@gmail.com",
+        "language": "pt-br"
     }
     """
-    return login(request.get_json())
+    return use_case.login(request.get_json())
 
 
 @auth_blueprint.route('/users/<user_id>/password', methods=['PUT'])
@@ -30,4 +33,4 @@ def router_update_user_password(user_id):
     }
     """
     data_json = request.get_json()
-    return update_user_password(data_json, user_id)
+    return use_case.update_user_password(data_json, user_id)

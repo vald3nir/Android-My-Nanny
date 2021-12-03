@@ -6,7 +6,8 @@ import os
 from flask import Flask
 from flask_cors import CORS
 
-from src.apis.blueprints import blueprints
+import src.utils.auth_utils as auth
+from src.blueprints import blueprints
 
 # Flask config
 # ---------------------------------------------------------------
@@ -15,7 +16,7 @@ app = Flask(__name__)
 
 app.config['FLASK_ENV'] = 'development'
 app.config['CORS_HEADERS'] = 'Content-Type'
-app.config['SECRET_KEY'] = 'Th1s1ss3cr3t'
+app.config['SECRET_KEY'] = auth.SECRET_KEY
 app.config['TESTING'] = True
 app.config['DEBUG'] = True
 
