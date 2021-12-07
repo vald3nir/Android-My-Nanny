@@ -1,10 +1,11 @@
 import uuid
+
 import jwt
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from src.utils.date_utils import create_data_exp
 
-SECRET_KEY = 'Th1s1ss3cr3t'
+SECRET_KEY = 'MyNannySecretKey'
 
 
 def create_user_id():

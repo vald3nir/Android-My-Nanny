@@ -4,13 +4,10 @@
 from subprocess import call
 
 libraries = [
-    # Flask libraries
-    "Flask", "Flask-Cors",
-    # Database
+    "Flask",
+    "Flask-Cors",
+    "PyJWT",
     "pymongo[srv]",
-    # Web Token
-    "jwt",
-    # Translate strings
     "googletrans==4.0.0-rc1",
 ]
 

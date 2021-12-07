@@ -13,16 +13,16 @@ class AuthUseCase(UseCase):
     def login(self, data_json):
         login_dto = LoginDTO().from_json(data_json)
 
-        user_db = self.db.get_user_db(login_dto.email)
+        user_db = self.db.get_user({"email": login_dto.email})
 
-        if user_db is None:
+        if user_db.user_id is None:
             return self.response_failed(
                 {
                     'message': self.translate_string('user not found', login_dto.language)
                 }
             )
 
-        if not compare_password_hash(user_db.password, login_dto.get_password_hash()):
+        if not compare_password_hash(user_db.password, login_dto.password):
             return self.response_failed(
                 {
                     'message': self.translate_string('password wrong', login_dto.language)

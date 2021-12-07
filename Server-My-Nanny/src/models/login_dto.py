@@ -1,6 +1,3 @@
-from src.utils.auth_utils import create_password_hash
-
-
 class LoginDTO:
 
     def __init__(self) -> None:
@@ -14,6 +11,3 @@ class LoginDTO:
         self.email = data_json["email"]
         self.password = data_json["password"]
         return self
-
-    def get_password_hash(self):
-        return create_password_hash(self.password)

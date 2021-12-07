@@ -1,10 +1,8 @@
+from src.blueprints.auth import auth_blueprint
 from src.blueprints.users import user_blueprint
 
 # ------------------------------------------------------------------
 # Blueprints
 # ------------------------------------------------------------------
 
-blueprints = [
-    user_blueprint,
-    # auth_blueprint
-]
+blueprints = [auth_blueprint, user_blueprint]
