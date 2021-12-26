@@ -1,4 +1,5 @@
 # App My Nanny
+
 A mobile app of an electronic babysitter for the IoT Discipline.
 
 Master in Computer Science - UFC
@@ -16,14 +17,14 @@ Master in Computer Science - UFC
 
 ## Video server configuration on Raspberry Pi [Linux]
 
-### Install Motion 
+### Install Motion
 
     sudo apt-get install motion
   
 ### Config Motion
 
-    sudo nano /etc/motion/motion.conf
-        
+    sudo nano /etc/motion/motion.con
+
 - Make sure 'daemon' is ON.
 - Set 'framerate' anywhere in between 1000 to 1500.
 - Keep 'Stream_port' to 8081.
@@ -45,11 +46,7 @@ Master in Computer Science - UFC
 
     sudo service motion restart
     sudo motion
-    
+
 ### To show
 
     http://192.168.0.40:8081/
-
-       
-      
-
