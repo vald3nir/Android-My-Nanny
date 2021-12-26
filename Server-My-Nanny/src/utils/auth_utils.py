@@ -3,9 +3,9 @@ import uuid
 import jwt
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from src.utils.date_utils import create_data_exp
+from src.utils.date_utils import *
 
-SECRET_KEY = 'MyNannySecretKey'
+SECRET_KEY = 'Application-Secret-Key'
 
 
 def create_user_id():
@@ -21,8 +21,21 @@ def compare_password_hash(p1, p2):
 
 
 def generate_user_token(user_id):
-    token = jwt.encode({
+    payload = {
         'user_id': user_id,
         'exp': create_data_exp()
-    }, SECRET_KEY)
-    return token.decode('UTF-8')
+    }
+    return jwt.encode(
+        payload,
+        SECRET_KEY,
+        algorithm='HS256'
+    )
+
+
+def user_id_from_token(token):
+    data = jwt.decode(
+        token,
+        SECRET_KEY,
+        algorithms='HS256'
+    )
+    return data["user_id"]

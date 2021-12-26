@@ -9,5 +9,9 @@ def get_today_date_utc():
     return str(datetime.utcnow())
 
 
+def get_date_from_timestamp(timestamp):
+    return datetime.fromtimestamp(timestamp)
+
+
 def create_data_exp():
-    return datetime.utcnow() + timedelta(minutes=60 * 60 * 60)
+    return datetime.utcnow() + timedelta(minutes=30)
