@@ -1,11 +1,12 @@
-package com.vald3nir.my_nanny
+package com.vald3nir.my_nanny.presentation.splash
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.vald3nir.my_nanny.R
 
-class MainActivity : AppCompatActivity() {
+class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_splash)
     }
 }
