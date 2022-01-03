@@ -7,7 +7,7 @@ buildscript {
         targetSdkVersion = 31
 
         gradle_version = "7.0.3"
-        kotlin_version = "1.6.0"
+        kotlin_version = '1.6.10'
         lifecycle_version = "2.4.0"
         koin_version = "2.2.2"
         coroutines_version = "1.5.0"

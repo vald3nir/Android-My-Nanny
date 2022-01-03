@@ -42,8 +42,6 @@ dependencies {
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation project(path: ':features:dashboard')
-    implementation project(path: ':features:login')
     kapt "com.android.databinding:compiler:$databinding_version"
 
     // Coroutines
