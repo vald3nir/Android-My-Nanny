@@ -9,7 +9,7 @@ android {
 
     compileSdkVersion rootProject.compileSdkVersion
 
-    dataBinding {
+    viewBinding {
         enabled = true
     }
 

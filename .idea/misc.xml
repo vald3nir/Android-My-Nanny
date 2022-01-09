@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/layout/activity_splash.xml" value="0.22" />
+        <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/drawable/ic_baby_bottle.xml" value="0.1" />
+        <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/drawable/ic_feeding_bottle_svgrepo_com.xml" value="0.1" />
+        <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18518518518518517" />
         <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2203125" />
       </map>
@@ -14,5 +16,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
   </component>
 </project>

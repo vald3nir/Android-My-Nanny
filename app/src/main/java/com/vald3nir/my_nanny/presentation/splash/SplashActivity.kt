@@ -1,12 +1,25 @@
 package com.vald3nir.my_nanny.presentation.splash
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.vald3nir.my_nanny.R
+import com.vald3nir.my_nanny.common.base_views.BaseActivity
+import com.vald3nir.my_nanny.databinding.ActivitySplashBinding
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : BaseActivity() {
+
+    private lateinit var binding: ActivitySplashBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        binding = ActivitySplashBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        initViews()
     }
+
+    private fun initViews() {
+        binding.apply {
+            loading.showLoadingAnimation()
+        }
+    }
+
+
 }
