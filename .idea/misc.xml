@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/drawable/confirm_button_layout.xml" value="0.2203125" />
         <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/drawable/ic_baby_bottle.xml" value="0.1" />
         <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/drawable/ic_feeding_bottle_svgrepo_com.xml" value="0.1" />
+        <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/drawable/input_text_layout.xml" value="0.2203125" />
+        <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/layout/custom_loading_screen.xml" value="0.20416666666666666" />
+        <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/layout/loading_screen.xml" value="0.20416666666666666" />
         <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18518518518518517" />
         <entry key="..\:/Projects/GitHub/My-Nanny-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2203125" />
       </map>

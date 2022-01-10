@@ -1,8 +1,10 @@
 package com.vald3nir.my_nanny.presentation.splash
 
+import android.content.Intent
 import android.os.Bundle
 import com.vald3nir.my_nanny.common.base_views.BaseActivity
 import com.vald3nir.my_nanny.databinding.ActivitySplashBinding
+import com.vald3nir.my_nanny.presentation.login.LoginActivity
 
 class SplashActivity : BaseActivity() {
 
@@ -19,7 +21,7 @@ class SplashActivity : BaseActivity() {
         binding.apply {
             loading.showLoadingAnimation()
         }
+
+        startActivity(Intent(this, LoginActivity::class.java))
     }
-
-
 }
