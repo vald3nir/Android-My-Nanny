@@ -29,7 +29,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imv_logo" />
 
-
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
@@ -37,16 +36,33 @@
         android:layout_marginTop="50dp"
         android:background="@drawable/input_text_layout"
         android:gravity="center"
-        android:hint="@string/prompt_email"
-        android:inputType="textEmailAddress"
+        android:hint="@string/user_name"
         android:padding="12dp"
         android:selectAllOnFocus="true"
-        android:text="severino@gmial.com"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txv_app_name" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/input_text_layout"
+        android:gravity="center"
+        android:hint="@string/prompt_email"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionDone"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        android:selectAllOnFocus="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <EditText
         android:id="@+id/password"
@@ -58,35 +74,22 @@
         android:hint="@string/prompt_password"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
-        android:inputType="textPassword"
+        android:inputType="textEmailAddress"
         android:padding="12dp"
         android:selectAllOnFocus="true"
-        android:text="12345678"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
-
-    <TextView
-        android:id="@+id/login"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@drawable/confirm_button_layout"
-        android:gravity="center"
-        android:text="@string/login"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/register" />
-
     <TextView
         android:id="@+id/register"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:background="@drawable/confirm_button_layout"
         android:gravity="center"
-        android:text="@string/register"
+        android:text="@string/save"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp"
