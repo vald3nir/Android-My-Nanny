@@ -6,7 +6,7 @@ Master in Computer Science - UFC
 
 ## Overview
 
-![overview](https://user-images.githubusercontent.com/23506996/144066611-343f705d-c392-4fe8-98a0-f574b05f7271.png)
+![144066611-343f705d-c392-4fe8-98a0-f574b05f7271](https://user-images.githubusercontent.com/23506996/152996890-75fba76d-2490-403e-b2ce-259852c3d194.png)
 
 ### Application
 
