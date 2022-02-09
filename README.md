@@ -8,13 +8,16 @@ Master in Computer Science - UFC
 
 ![144066611-343f705d-c392-4fe8-98a0-f574b05f7271](https://user-images.githubusercontent.com/23506996/152996890-75fba76d-2490-403e-b2ce-259852c3d194.png)
 
-### Application
+## Print Screens
 
-![splash](https://user-images.githubusercontent.com/23506996/144067086-9150c9fc-793a-47ed-929d-31b479e42f0f.png)
-![registro](https://user-images.githubusercontent.com/23506996/144067084-13e62c77-cdab-4edc-82fb-761c2ac4b2e4.png)
-![login](https://user-images.githubusercontent.com/23506996/144067088-13f0fc96-a048-4037-a9c9-af432ac33c50.png)
-![monitor](https://user-images.githubusercontent.com/23506996/144067078-056a527a-24d6-449d-8221-efa6aaea7ec7.png)
+### Splash Screen
 
-### Server
+![Animação](https://user-images.githubusercontent.com/23506996/153272303-e4996ccc-761b-4ccc-b859-020acabd86ca.gif)
 
-[Server API repository link](https://github.com/vald3nir/My-Nanny-Server)
+### Login Screen
+
+![image](https://user-images.githubusercontent.com/23506996/153273061-a6d2c59d-e9f5-4980-aeaf-9c3b83a27f60.png)
+
+### Register Screen
+
+![image](https://user-images.githubusercontent.com/23506996/153273507-d082e05b-ec59-4a06-bb2d-202adc261ee7.png)
