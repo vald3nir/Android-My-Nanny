@@ -6,8 +6,8 @@ import com.vald3nir.my_nanny.R
 import com.vald3nir.my_nanny.common.core.BaseViewModel
 import com.vald3nir.my_nanny.common.validations.isEmailValid
 import com.vald3nir.my_nanny.common.validations.isPasswordValid
-import com.vald3nir.my_nanny.domain.AuthUseCase
-import com.vald3nir.my_nanny.domain.ScreenNavigation
+import com.vald3nir.my_nanny.domain.auth.AuthUseCase
+import com.vald3nir.my_nanny.domain.navigation.ScreenNavigation
 
 class LoginViewModel(
     private val screenNavigation: ScreenNavigation,

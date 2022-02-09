@@ -7,6 +7,14 @@
     android:background="@color/app_background_color"
     android:padding="20dp">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <com.vald3nir.my_nanny.common.components.CustomImageView
         android:id="@+id/imv_logo"
         android:layout_width="150dp"
@@ -29,27 +37,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imv_logo" />
 
-    <EditText
-        android:id="@+id/edt_user_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/input_text_layout"
-        android:gravity="center"
-        android:hint="@string/user_name"
-        android:padding="12dp"
-        android:selectAllOnFocus="true"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txv_app_name" />
 
     <EditText
         android:id="@+id/edt_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/input_text_layout"
         android:gravity="center"
         android:hint="@string/prompt_email"
@@ -62,7 +55,7 @@
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_user_name" />
+        app:layout_constraintTop_toBottomOf="@+id/txv_app_name" />
 
     <EditText
         android:id="@+id/edt_password"
@@ -74,7 +67,7 @@
         android:hint="@string/prompt_password"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         android:padding="12dp"
         android:selectAllOnFocus="true"
         android:textColor="@color/black"
@@ -93,7 +86,7 @@
         android:hint="@string/prompt_confirm_password"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         android:padding="12dp"
         android:selectAllOnFocus="true"
         android:textColor="@color/black"

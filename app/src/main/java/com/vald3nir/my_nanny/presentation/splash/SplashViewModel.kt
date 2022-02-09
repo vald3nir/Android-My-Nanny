@@ -2,8 +2,8 @@ package com.vald3nir.my_nanny.presentation.splash
 
 import androidx.lifecycle.viewModelScope
 import com.vald3nir.my_nanny.common.core.BaseViewModel
-import com.vald3nir.my_nanny.domain.AuthUseCase
-import com.vald3nir.my_nanny.domain.ScreenNavigation
+import com.vald3nir.my_nanny.domain.auth.AuthUseCase
+import com.vald3nir.my_nanny.domain.navigation.ScreenNavigation
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*

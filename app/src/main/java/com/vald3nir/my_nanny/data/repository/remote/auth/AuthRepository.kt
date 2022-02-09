@@ -1,4 +1,4 @@
-package com.vald3nir.my_nanny.data.repository.remote
+package com.vald3nir.my_nanny.data.repository.remote.auth
 
 import android.app.Activity
 

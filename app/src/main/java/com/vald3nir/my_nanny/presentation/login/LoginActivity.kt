@@ -3,8 +3,8 @@ package com.vald3nir.my_nanny.presentation.login
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
 import androidx.lifecycle.Observer
-import com.vald3nir.my_nanny.common.extensions.afterTextChanged
 import com.vald3nir.my_nanny.common.core.BaseActivity
+import com.vald3nir.my_nanny.common.extensions.afterTextChanged
 import com.vald3nir.my_nanny.databinding.ActivityLoginBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -28,21 +28,10 @@ class LoginActivity : BaseActivity() {
             btnLogin.setOnClickListener { login() }
             btnRegister.setOnClickListener { register() }
 
-            edtEmail.afterTextChanged {
-                viewModel.loginDataChanged(
-                    edtEmail.text.toString(),
-                    edtPassword.text.toString()
-                )
-            }
+            edtEmail.afterTextChanged { loginDataChanged() }
 
             edtPassword.apply {
-                afterTextChanged {
-                    viewModel.loginDataChanged(
-                        edtEmail.text.toString(),
-                        edtPassword.text.toString()
-                    )
-                }
-
+                afterTextChanged { loginDataChanged() }
                 setOnEditorActionListener { _, actionId, _ ->
                     when (actionId) {
                         EditorInfo.IME_ACTION_DONE ->
@@ -64,6 +53,13 @@ class LoginActivity : BaseActivity() {
                 binding.edtPassword.error = getString(loginState.passwordError)
             }
         })
+    }
+
+    private fun ActivityLoginBinding.loginDataChanged() {
+        viewModel.loginDataChanged(
+            edtEmail.text.toString(),
+            edtPassword.text.toString()
+        )
     }
 
     private fun ActivityLoginBinding.login() {

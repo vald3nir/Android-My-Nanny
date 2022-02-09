@@ -1,4 +1,4 @@
-package com.vald3nir.my_nanny.domain
+package com.vald3nir.my_nanny.domain.navigation
 
 import android.content.Intent
 import com.vald3nir.my_nanny.common.core.AppView
