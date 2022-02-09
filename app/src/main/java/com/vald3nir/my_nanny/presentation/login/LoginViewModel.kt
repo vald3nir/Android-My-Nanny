@@ -4,29 +4,28 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.vald3nir.my_nanny.R
 import com.vald3nir.my_nanny.common.core.BaseViewModel
-import com.vald3nir.my_nanny.common.validations.isPasswordValid
 import com.vald3nir.my_nanny.common.validations.isEmailValid
-import com.vald3nir.my_nanny.data.remote.dto.LoginFormState
-import com.vald3nir.my_nanny.data.remote.dto.LoginResult
+import com.vald3nir.my_nanny.common.validations.isPasswordValid
 import com.vald3nir.my_nanny.domain.AuthUseCase
+import com.vald3nir.my_nanny.domain.ScreenNavigation
 
 class LoginViewModel(
-    private val authUseCase: AuthUseCase
+    private val screenNavigation: ScreenNavigation,
+    private val authUseCase: AuthUseCase,
 ) : BaseViewModel() {
-
 
     private val _loginForm = MutableLiveData<LoginFormState>()
     val loginFormState: LiveData<LoginFormState> = _loginForm
 
-    private val _loginResult = MutableLiveData<LoginResult>()
-    val loginResult: LiveData<LoginResult> = _loginResult
+    fun register() {
+        screenNavigation.redirectToRegister(view)
+    }
 
     fun login(email: String, password: String) {
         authUseCase.login(appView = view, email = email, password = password, onSuccess = {
-            _loginResult.value =
-                LoginResult(success = LoggedInUserView(displayName = "deu certo"))
+            screenNavigation.redirectToDashboard(view)
         }, onError = {
-            _loginResult.value = LoginResult(error = R.string.login_failed)
+            view?.showMessage(it?.message)
         })
     }
 
@@ -39,4 +38,10 @@ class LoginViewModel(
             _loginForm.value = LoginFormState(isDataValid = true)
         }
     }
+
+    data class LoginFormState(
+        val usernameError: Int? = null,
+        val passwordError: Int? = null,
+        val isDataValid: Boolean = false
+    )
 }

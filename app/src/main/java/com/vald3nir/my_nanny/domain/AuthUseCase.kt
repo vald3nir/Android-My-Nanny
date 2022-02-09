@@ -9,7 +9,12 @@ interface AuthUseCase {
         email: String,
         password: String,
         onSuccess: () -> Unit,
-        onError: () -> Unit,
+        onError: (e: Exception?) -> Unit,
     )
 
+    suspend fun checkUserLogger(
+        appView: AppView?,
+        onSuccess: () -> Unit,
+        onError: () -> Unit,
+    )
 }

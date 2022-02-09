@@ -26,15 +26,15 @@ class RegisterActivity : BaseActivity() {
         viewModel = ViewModelProvider(this)[RegisterViewModel::class.java]
         auth = Firebase.auth
 
-        binding.register.setOnClickListener {
+        binding.btnRegister.setOnClickListener {
             reload()
         }
     }
 
     private fun reload() {
 
-        val email = binding.email.text.toString()
-        val password = binding.password.text.toString()
+        val email = binding.edtEmail.text.toString()
+        val password = binding.edtPassword.text.toString()
 
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->

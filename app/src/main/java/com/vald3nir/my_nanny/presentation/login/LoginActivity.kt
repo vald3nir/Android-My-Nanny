@@ -10,14 +10,14 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : BaseActivity() {
 
-    private val loginViewModel: LoginViewModel by viewModel()
+    private val viewModel: LoginViewModel by viewModel()
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        loginViewModel.view = this
+        viewModel.view = this
         setupObservers()
     }
 
@@ -25,22 +25,21 @@ class LoginActivity : BaseActivity() {
 
         binding.apply {
 
-            login.setOnClickListener {
-                login()
-            }
+            btnLogin.setOnClickListener { login() }
+            btnRegister.setOnClickListener { register() }
 
-            email.afterTextChanged {
-                loginViewModel.loginDataChanged(
-                    email.text.toString(),
-                    password.text.toString()
+            edtEmail.afterTextChanged {
+                viewModel.loginDataChanged(
+                    edtEmail.text.toString(),
+                    edtPassword.text.toString()
                 )
             }
 
-            password.apply {
+            edtPassword.apply {
                 afterTextChanged {
-                    loginViewModel.loginDataChanged(
-                        email.text.toString(),
-                        password.text.toString()
+                    viewModel.loginDataChanged(
+                        edtEmail.text.toString(),
+                        edtPassword.text.toString()
                     )
                 }
 
@@ -54,36 +53,27 @@ class LoginActivity : BaseActivity() {
             }
         }
 
-        loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
+        viewModel.loginFormState.observe(this@LoginActivity, Observer {
             val loginState = it ?: return@Observer
-
-            // disable login button unless both username / password is valid
-            binding.login.isEnabled = loginState.isDataValid
+            binding.btnLogin.isEnabled = loginState.isDataValid
 
             if (loginState.usernameError != null) {
-                binding.email.error = getString(loginState.usernameError)
+                binding.edtEmail.error = getString(loginState.usernameError)
             }
             if (loginState.passwordError != null) {
-                binding.password.error = getString(loginState.passwordError)
-            }
-        })
-
-        loginViewModel.loginResult.observe(this@LoginActivity, Observer {
-            val loginResult = it ?: return@Observer
-
-            if (loginResult.error != null) {
-                showMessage(loginResult.error)
-            }
-            if (loginResult.success != null) {
-                showMessage("deu certo")
+                binding.edtPassword.error = getString(loginState.passwordError)
             }
         })
     }
 
     private fun ActivityLoginBinding.login() {
-        loginViewModel.login(
-            email = email.text.toString(),
-            password = password.text.toString()
+        viewModel.login(
+            email = edtEmail.text.toString(),
+            password = edtPassword.text.toString()
         )
+    }
+
+    private fun ActivityLoginBinding.register() {
+        viewModel.register()
     }
 }
