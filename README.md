@@ -16,4 +16,5 @@ Master in Computer Science - UFC
 
 | Login Screen | Register Screen |
 | ------------- | ------------- |
-| <img src="https://user-images.githubusercontent.com/23506996/153273061-a6d2c59d-e9f5-4980-aeaf-9c3b83a27f60.png" width="255"> | <img src="https://user-images.githubusercontent.com/23506996/153273507-d082e05b-ec59-4a06-bb2d-202adc261ee7.png" width="255"> |
+| <img src="https://user-images.githubusercontent.com/23506996/153273061-a6d2c59d-e9f5-4980-aeaf-9c3b83a27f60.png" width="255"> | <img src="https://user-images.githubusercontent.com/23506996/153277336-1f93306e-8c4f-4642-9276-fa88469340fb.png" width="255"> |
+
