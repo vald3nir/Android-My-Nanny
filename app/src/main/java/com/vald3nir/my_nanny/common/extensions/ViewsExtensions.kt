@@ -1,4 +1,4 @@
-package com.vald3nir.my_nanny.common
+package com.vald3nir.my_nanny.common.extensions
 
 import android.text.Editable
 import android.text.TextWatcher

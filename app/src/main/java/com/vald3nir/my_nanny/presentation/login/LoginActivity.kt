@@ -3,7 +3,7 @@ package com.vald3nir.my_nanny.presentation.login
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
 import androidx.lifecycle.Observer
-import com.vald3nir.my_nanny.common.afterTextChanged
+import com.vald3nir.my_nanny.common.extensions.afterTextChanged
 import com.vald3nir.my_nanny.common.core.BaseActivity
 import com.vald3nir.my_nanny.databinding.ActivityLoginBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
