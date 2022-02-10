@@ -18,15 +18,16 @@ class SplashViewModel(
     fun checkUserLogger() {
 
         Timer("checkUserLogger", false).schedule(2000) {
-            viewModelScope.launch(Dispatchers.IO) {
-                authUseCase.checkUserLogger(view,
-                    onSuccess = {
-                        screenNavigation.redirectToDashboard(view)
-                    }, onError = {
-                        screenNavigation.redirectToLogin(view)
-                    }
-                )
-            }
+            screenNavigation.redirectToLogin(view)
+//            viewModelScope.launch(Dispatchers.IO) {
+//                authUseCase.checkUserLogger(view,
+//                    onSuccess = {
+//                        screenNavigation.redirectToDashboard(view)
+//                    }, onError = {
+//                        screenNavigation.redirectToLogin(view)
+//                    }
+//                )
+//            }
         }
     }
 }

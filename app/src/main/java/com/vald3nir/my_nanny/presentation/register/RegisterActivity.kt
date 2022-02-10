@@ -25,6 +25,7 @@ class RegisterActivity : BaseActivity() {
 
         binding.apply {
 
+            btnBack.setOnClickListener { onBackPressed() }
             btnRegister.setOnClickListener { register() }
 
             edtEmail.afterTextChanged { registerDataChanged() }

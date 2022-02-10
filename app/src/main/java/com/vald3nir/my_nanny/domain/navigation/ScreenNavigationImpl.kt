@@ -2,7 +2,7 @@ package com.vald3nir.my_nanny.domain.navigation
 
 import android.content.Intent
 import com.vald3nir.my_nanny.common.core.AppView
-import com.vald3nir.my_nanny.presentation.dashboard.DashboardActivity
+import com.vald3nir.my_nanny.presentation.home.HomeActivity
 import com.vald3nir.my_nanny.presentation.login.LoginActivity
 import com.vald3nir.my_nanny.presentation.register.RegisterActivity
 
@@ -24,7 +24,7 @@ class ScreenNavigationImpl() : ScreenNavigation {
         openActivity(view, RegisterActivity::class.java)
     }
 
-    override fun redirectToDashboard(view: AppView?) {
-        openActivity(view, DashboardActivity::class.java)
+    override fun redirectToHome(view: AppView?) {
+        openActivity(view, HomeActivity::class.java)
     }
 }

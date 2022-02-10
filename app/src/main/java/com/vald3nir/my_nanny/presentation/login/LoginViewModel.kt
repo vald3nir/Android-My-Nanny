@@ -23,7 +23,7 @@ class LoginViewModel(
 
     fun login(email: String, password: String) {
         authUseCase.login(appView = view, email = email, password = password, onSuccess = {
-            screenNavigation.redirectToDashboard(view)
+            screenNavigation.redirectToHome(view)
         }, onError = {
             view?.showMessage(it?.message)
         })
