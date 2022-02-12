@@ -13,8 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidMyNanny">
         <activity
+            android:name=".presentation.config.SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
+        <activity
             android:name=".presentation.home.HomeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".presentation.register.RegisterActivity"
             android:exported="false" />

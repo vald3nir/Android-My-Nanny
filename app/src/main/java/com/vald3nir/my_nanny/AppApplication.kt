@@ -11,6 +11,7 @@ import com.vald3nir.my_nanny.domain.navigation.ScreenNavigation
 import com.vald3nir.my_nanny.domain.navigation.ScreenNavigationImpl
 import com.vald3nir.my_nanny.domain.register.RegisterUseCase
 import com.vald3nir.my_nanny.domain.register.RegisterUseCaseImpl
+import com.vald3nir.my_nanny.presentation.config.SettingsViewModel
 import com.vald3nir.my_nanny.presentation.login.LoginViewModel
 import com.vald3nir.my_nanny.presentation.register.RegisterViewModel
 import com.vald3nir.my_nanny.presentation.splash.SplashViewModel
@@ -41,6 +42,7 @@ class AppApplication : Application() {
             viewModel { SplashViewModel(screenNavigation = get(), authUseCase = get()) }
             viewModel { LoginViewModel(screenNavigation = get(), authUseCase = get()) }
             viewModel { RegisterViewModel(screenNavigation = get(), registerUseCase = get()) }
+            viewModel { SettingsViewModel() }
 
             factory<AuthRepository> { AuthRepositoryImpl() }
             factory<AuthUseCase> { AuthUseCaseImpl(repository = get()) }

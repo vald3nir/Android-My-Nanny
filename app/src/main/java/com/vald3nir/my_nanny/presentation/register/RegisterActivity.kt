@@ -3,9 +3,12 @@ package com.vald3nir.my_nanny.presentation.register
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
 import androidx.lifecycle.Observer
+import com.vald3nir.my_nanny.R
 import com.vald3nir.my_nanny.common.core.BaseActivity
 import com.vald3nir.my_nanny.common.extensions.afterTextChanged
 import com.vald3nir.my_nanny.databinding.ActivityRegisterBinding
+import kotlinx.android.synthetic.main.custom_toolbar.*
+import kotlinx.android.synthetic.main.custom_toolbar.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RegisterActivity : BaseActivity() {
@@ -25,7 +28,11 @@ class RegisterActivity : BaseActivity() {
 
         binding.apply {
 
-            btnBack.setOnClickListener { onBackPressed() }
+            toolbar.apply {
+                title.text = getString(R.string.register)
+                btnBack.setOnClickListener { onBackPressed() }
+            }
+
             btnRegister.setOnClickListener { register() }
 
             edtEmail.afterTextChanged { registerDataChanged() }

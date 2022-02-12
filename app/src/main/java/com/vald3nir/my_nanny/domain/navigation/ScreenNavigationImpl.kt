@@ -2,8 +2,8 @@ package com.vald3nir.my_nanny.domain.navigation
 
 import android.content.Intent
 import com.vald3nir.my_nanny.common.core.AppView
+import com.vald3nir.my_nanny.presentation.config.SettingsActivity
 import com.vald3nir.my_nanny.presentation.home.HomeActivity
-import com.vald3nir.my_nanny.presentation.login.LoginActivity
 import com.vald3nir.my_nanny.presentation.register.RegisterActivity
 
 class ScreenNavigationImpl() : ScreenNavigation {
@@ -17,7 +17,7 @@ class ScreenNavigationImpl() : ScreenNavigation {
     }
 
     override fun redirectToLogin(view: AppView?) {
-        openActivity(view, LoginActivity::class.java)
+        openActivity(view, SettingsActivity::class.java)
     }
 
     override fun redirectToRegister(view: AppView?) {
