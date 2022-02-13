@@ -7,15 +7,16 @@ import com.vald3nir.my_nanny.data.repository.remote.config.AppConfigRepository
 import com.vald3nir.my_nanny.data.repository.remote.config.AppConfigRepositoryImpl
 import com.vald3nir.my_nanny.data.repository.remote.register.RegisterRepository
 import com.vald3nir.my_nanny.data.repository.remote.register.RegisterRepositoryImpl
+import com.vald3nir.my_nanny.domain.navigation.ScreenNavigation
+import com.vald3nir.my_nanny.domain.navigation.ScreenNavigationImpl
 import com.vald3nir.my_nanny.domain.use_cases.auth.AuthUseCase
 import com.vald3nir.my_nanny.domain.use_cases.auth.AuthUseCaseImpl
 import com.vald3nir.my_nanny.domain.use_cases.config.AppConfigUseCase
 import com.vald3nir.my_nanny.domain.use_cases.config.AppConfigUseCaseImpl
-import com.vald3nir.my_nanny.domain.navigation.ScreenNavigation
-import com.vald3nir.my_nanny.domain.navigation.ScreenNavigationImpl
 import com.vald3nir.my_nanny.domain.use_cases.register.RegisterUseCase
 import com.vald3nir.my_nanny.domain.use_cases.register.RegisterUseCaseImpl
 import com.vald3nir.my_nanny.presentation.config.SettingsViewModel
+import com.vald3nir.my_nanny.presentation.home.HomeViewModel
 import com.vald3nir.my_nanny.presentation.login.LoginViewModel
 import com.vald3nir.my_nanny.presentation.register.RegisterViewModel
 import com.vald3nir.my_nanny.presentation.splash.SplashViewModel
@@ -46,6 +47,7 @@ class AppApplication : Application() {
             viewModel { SplashViewModel(screenNavigation = get(), appConfigUseCase = get()) }
             viewModel { LoginViewModel(screenNavigation = get(), authUseCase = get()) }
             viewModel { RegisterViewModel(screenNavigation = get(), registerUseCase = get()) }
+            viewModel { HomeViewModel(screenNavigation = get(), appConfigUseCase = get()) }
             viewModel { SettingsViewModel(appConfigUseCase = get()) }
 
             factory<AuthRepository> { AuthRepositoryImpl() }

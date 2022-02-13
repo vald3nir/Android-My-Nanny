@@ -30,7 +30,8 @@ class LoginViewModel(
             }, onError = {
                 view?.showLoading(false)
                 view?.showMessage(it?.message)
-            })
+            }
+        )
     }
 
     fun loginDataChanged(username: String, password: String) {
