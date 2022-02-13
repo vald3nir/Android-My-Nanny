@@ -11,5 +11,4 @@ interface AppView {
     fun showMessage(message: Int)
 
     fun showLoading(show: Boolean)
-
 }

@@ -3,14 +3,18 @@ package com.vald3nir.my_nanny
 import android.app.Application
 import com.vald3nir.my_nanny.data.repository.remote.auth.AuthRepository
 import com.vald3nir.my_nanny.data.repository.remote.auth.AuthRepositoryImpl
+import com.vald3nir.my_nanny.data.repository.remote.config.AppConfigRepository
+import com.vald3nir.my_nanny.data.repository.remote.config.AppConfigRepositoryImpl
 import com.vald3nir.my_nanny.data.repository.remote.register.RegisterRepository
 import com.vald3nir.my_nanny.data.repository.remote.register.RegisterRepositoryImpl
-import com.vald3nir.my_nanny.domain.auth.AuthUseCase
-import com.vald3nir.my_nanny.domain.auth.AuthUseCaseImpl
+import com.vald3nir.my_nanny.domain.use_cases.auth.AuthUseCase
+import com.vald3nir.my_nanny.domain.use_cases.auth.AuthUseCaseImpl
+import com.vald3nir.my_nanny.domain.use_cases.config.AppConfigUseCase
+import com.vald3nir.my_nanny.domain.use_cases.config.AppConfigUseCaseImpl
 import com.vald3nir.my_nanny.domain.navigation.ScreenNavigation
 import com.vald3nir.my_nanny.domain.navigation.ScreenNavigationImpl
-import com.vald3nir.my_nanny.domain.register.RegisterUseCase
-import com.vald3nir.my_nanny.domain.register.RegisterUseCaseImpl
+import com.vald3nir.my_nanny.domain.use_cases.register.RegisterUseCase
+import com.vald3nir.my_nanny.domain.use_cases.register.RegisterUseCaseImpl
 import com.vald3nir.my_nanny.presentation.config.SettingsViewModel
 import com.vald3nir.my_nanny.presentation.login.LoginViewModel
 import com.vald3nir.my_nanny.presentation.register.RegisterViewModel
@@ -39,16 +43,24 @@ class AppApplication : Application() {
 
         return module {
 
-            viewModel { SplashViewModel(screenNavigation = get(), authUseCase = get()) }
+            viewModel { SplashViewModel(screenNavigation = get(), appConfigUseCase = get()) }
             viewModel { LoginViewModel(screenNavigation = get(), authUseCase = get()) }
             viewModel { RegisterViewModel(screenNavigation = get(), registerUseCase = get()) }
-            viewModel { SettingsViewModel() }
+            viewModel { SettingsViewModel(appConfigUseCase = get()) }
 
             factory<AuthRepository> { AuthRepositoryImpl() }
             factory<AuthUseCase> { AuthUseCaseImpl(repository = get()) }
 
             factory<RegisterRepository> { RegisterRepositoryImpl() }
             factory<RegisterUseCase> { RegisterUseCaseImpl(repository = get()) }
+
+            factory<AppConfigRepository> { AppConfigRepositoryImpl() }
+            factory<AppConfigUseCase> {
+                AppConfigUseCaseImpl(
+                    repository = get(),
+                    screenNavigation = get()
+                )
+            }
 
             factory<ScreenNavigation> { ScreenNavigationImpl() }
         }

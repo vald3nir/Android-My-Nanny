@@ -33,7 +33,7 @@ class RegisterActivity : BaseActivity() {
                 btnBack.setOnClickListener { onBackPressed() }
             }
 
-            btnRegister.setOnClickListener { register() }
+            btnRegister.setOnClickListener { registerNewUser() }
 
             edtEmail.afterTextChanged { registerDataChanged() }
 
@@ -44,7 +44,7 @@ class RegisterActivity : BaseActivity() {
                 setOnEditorActionListener { _, actionId, _ ->
                     when (actionId) {
                         EditorInfo.IME_ACTION_DONE ->
-                            register()
+                            registerNewUser()
                     }
                     false
                 }
@@ -67,18 +67,22 @@ class RegisterActivity : BaseActivity() {
         })
     }
 
-    private fun ActivityRegisterBinding.registerDataChanged() {
-        viewModel.registerDataChanged(
-            edtEmail.text.toString(),
-            edtPassword.text.toString(),
-            edtConfirmPassword.text.toString()
-        )
+    private fun registerDataChanged() {
+        binding.apply {
+            viewModel.registerDataChanged(
+                edtEmail.text.toString(),
+                edtPassword.text.toString(),
+                edtConfirmPassword.text.toString()
+            )
+        }
     }
 
-    private fun ActivityRegisterBinding.register() {
-        viewModel.register(
-            email = edtEmail.text.toString(),
-            password = edtPassword.text.toString()
-        )
+    private fun registerNewUser() {
+        binding.apply {
+            viewModel.registerNewUser(
+                email = edtEmail.text.toString(),
+                password = edtPassword.text.toString()
+            )
+        }
     }
 }

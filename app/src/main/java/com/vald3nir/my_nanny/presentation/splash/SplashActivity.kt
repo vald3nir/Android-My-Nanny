@@ -20,7 +20,7 @@ class SplashActivity : BaseActivity() {
 
     private fun initViews() {
         binding.loading.showLoadingAnimation()
-        viewModel.checkUserLogger()
+        viewModel.loadAppConfig()
     }
 
 }

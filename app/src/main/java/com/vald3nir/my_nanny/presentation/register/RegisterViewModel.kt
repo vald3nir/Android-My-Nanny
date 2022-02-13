@@ -7,7 +7,7 @@ import com.vald3nir.my_nanny.common.core.BaseViewModel
 import com.vald3nir.my_nanny.common.validations.isEmailValid
 import com.vald3nir.my_nanny.common.validations.isPasswordValid
 import com.vald3nir.my_nanny.domain.navigation.ScreenNavigation
-import com.vald3nir.my_nanny.domain.register.RegisterUseCase
+import com.vald3nir.my_nanny.domain.use_cases.register.RegisterUseCase
 
 class RegisterViewModel(
     private val screenNavigation: ScreenNavigation,
@@ -17,15 +17,18 @@ class RegisterViewModel(
     private val _loginForm = MutableLiveData<RegisterFormState>()
     val registerFormState: LiveData<RegisterFormState> = _loginForm
 
-    fun register(email: String, password: String) {
+    fun registerNewUser(email: String, password: String) {
+        view?.showLoading(true)
         registerUseCase.registerNewUser(
             appView = view,
             email = email,
             password = password,
             onSuccess = {
+                view?.showLoading(false)
                 screenNavigation.redirectToHome(view)
             },
             onError = {
+                view?.showLoading(false)
                 view?.showMessage(it?.message)
             })
     }
