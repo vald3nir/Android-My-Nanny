@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.vald3nir.my_nanny.R
 import com.vald3nir.my_nanny.common.core.BaseActivity
-import com.vald3nir.my_nanny.databinding.SettingsActivityBinding
+import com.vald3nir.my_nanny.databinding.ActivitySettingsBinding
 import kotlinx.android.synthetic.main.custom_toolbar.*
 import kotlinx.android.synthetic.main.custom_toolbar.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -12,11 +12,11 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class SettingsActivity : BaseActivity() {
 
     private val viewModel: SettingsViewModel by viewModel()
-    private lateinit var binding: SettingsActivityBinding
+    private lateinit var binding: ActivitySettingsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = SettingsActivityBinding.inflate(layoutInflater)
+        binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         viewModel.view = this
         setupObservers()
