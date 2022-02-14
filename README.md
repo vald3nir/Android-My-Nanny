@@ -21,3 +21,41 @@ Master in Computer Science - UFC
 | Home Screen | Config Screen |
 | ------------- | ------------- |
 | <img src="https://user-images.githubusercontent.com/23506996/153853311-f389cc54-2b25-48fd-b38d-6fa79a3f5f82.gif" height="450" width="255"> | <img src="https://user-images.githubusercontent.com/23506996/153850563-5f6de8ec-0d9f-45a2-bab2-d883174364cc.png" width="255"> |
+
+## Video server configuration on Raspberry Pi [Linux]
+
+### Install Motion
+
+    sudo apt-get install motion
+  
+### Config Motion
+
+    sudo nano /etc/motion/motion.con
+
+- Make sure 'daemon' is ON.
+- Set 'framerate' anywhere in between 1000 to 1500.
+- Keep 'Stream_port' to 8081.
+- 'Stream_quality' should be 100.
+- Change 'Stream_localhost' to OFF.
+- Change 'webcontrol_localhost' to OFF.
+- Set 'quality' to 100.
+- Set 'width' & 'height' to 640 & 480.
+- Set 'post_capture' to 5.
+- Press ctrl + x to exit.
+
+### Setup boot
+
+    sudo nano /etc/default/motion
+
+- Set ' start_motion_daemon ' to yes
+
+### Run Motion
+
+    sudo service motion restart
+    sudo motion
+
+### To show
+
+    http://192.168.0.40:8081/
+
+ 
