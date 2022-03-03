@@ -44,19 +44,14 @@ class AppApplication : Application() {
 
         return module {
 
-            viewModel { SplashViewModel(screenNavigation = get(), appConfigUseCase = get()) }
-            viewModel { LoginViewModel(screenNavigation = get(), authUseCase = get()) }
-            viewModel { RegisterViewModel(screenNavigation = get(), registerUseCase = get()) }
-            viewModel { HomeViewModel(screenNavigation = get(), appConfigUseCase = get()) }
-            viewModel { SettingsViewModel(appConfigUseCase = get()) }
-
+            // Repositories
             factory<AuthRepository> { AuthRepositoryImpl() }
-            factory<AuthUseCase> { AuthUseCaseImpl(repository = get()) }
-
             factory<RegisterRepository> { RegisterRepositoryImpl() }
-            factory<RegisterUseCase> { RegisterUseCaseImpl(repository = get()) }
-
             factory<AppConfigRepository> { AppConfigRepositoryImpl() }
+
+            // Use cases
+            factory<AuthUseCase> { AuthUseCaseImpl(repository = get()) }
+            factory<RegisterUseCase> { RegisterUseCaseImpl(repository = get()) }
             factory<AppConfigUseCase> {
                 AppConfigUseCaseImpl(
                     repository = get(),
@@ -64,7 +59,15 @@ class AppApplication : Application() {
                 )
             }
 
+            // Navigation
             factory<ScreenNavigation> { ScreenNavigationImpl() }
+
+            // View models
+            viewModel { SplashViewModel(screenNavigation = get(), appConfigUseCase = get()) }
+            viewModel { LoginViewModel(screenNavigation = get(), authUseCase = get()) }
+            viewModel { RegisterViewModel(screenNavigation = get(), registerUseCase = get()) }
+            viewModel { HomeViewModel(screenNavigation = get(), appConfigUseCase = get()) }
+            viewModel { SettingsViewModel(appConfigUseCase = get()) }
         }
     }
 }

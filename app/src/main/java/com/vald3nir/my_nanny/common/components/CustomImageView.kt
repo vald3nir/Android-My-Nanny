@@ -19,9 +19,6 @@ class CustomImageView : AppCompatImageView {
             AnimationUtils.loadAnimation(context, R.anim.rotate_indefinitely)
         )
     }
-
-
-
 }
 
 
